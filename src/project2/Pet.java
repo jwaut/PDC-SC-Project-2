@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 
-package project1;
+package project2;
 
 /** This class is used to store
  *  data pertaining to the pet
