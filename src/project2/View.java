@@ -43,6 +43,7 @@ public class View extends javax.swing.JFrame {
         noButton = new javax.swing.JButton();
         petSelect = new javax.swing.JComboBox<>();
         select = new javax.swing.JButton();
+        alert = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
         jDialog1.getContentPane().setLayout(jDialog1Layout);
@@ -57,8 +58,9 @@ public class View extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Fun Pet Game");
-        setMaximumSize(new java.awt.Dimension(350, 200));
-        setMinimumSize(new java.awt.Dimension(350, 200));
+        setMaximumSize(new java.awt.Dimension(450, 350));
+        setMinimumSize(new java.awt.Dimension(450, 350));
+        setPreferredSize(new java.awt.Dimension(400, 350));
         setResizable(false);
 
         jToolBar1.setRollover(true);
@@ -137,35 +139,39 @@ public class View extends javax.swing.JFrame {
         select.setText("Select");
         select.setVisible(false);
 
+        alert.setBackground(new java.awt.Color(255, 0, 0));
+        alert.setText("ALERT");
+        alert.setVisible(false);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel1)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(petSelect, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(select))
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(yesButton)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(noButton))
-                        .addComponent(textInput, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(submitButton)
-                .addGap(51, 51, 51))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(alert, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(textInput, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(yesButton)
+                                .addComponent(petSelect, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(select)
+                            .addComponent(noButton)
+                            .addComponent(submitButton))))
+                .addGap(129, 129, 129))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(52, 52, 52)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(textInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(submitButton))
@@ -177,7 +183,9 @@ public class View extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(petSelect, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(select))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 83, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(alert, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
                 .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -228,6 +236,7 @@ public class View extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel alert;
     private javax.swing.JButton feedButton;
     private javax.swing.JButton jButton3;
     private javax.swing.JDialog jDialog1;
@@ -269,18 +278,19 @@ public class View extends javax.swing.JFrame {
     public javax.swing.JButton getNo() {
         return this.noButton;
     }
-    public javax.swing.JTextField getTextField()
-    {
+
+    public javax.swing.JTextField getTextField() {
         return this.textInput;
     }
-    public javax.swing.JComboBox getPetSelect()
-    {
+
+    public javax.swing.JComboBox getPetSelect() {
         return this.petSelect;
     }
-    public javax.swing.JButton getSelectButton()
-    {
+
+    public javax.swing.JButton getSelectButton() {
         return this.select;
     }
+
     public void pressPlay() {
         this.jButton3.setVisible(false);
 
@@ -294,6 +304,23 @@ public class View extends javax.swing.JFrame {
         submitButton.setVisible(false);
         return textInput.getText();
     }
+
+    public javax.swing.JButton getPlayWith() {
+        return this.playButton;
+    }
+
+    public javax.swing.JButton getFeed() {
+        return this.feedButton;
+    }
+
+    public javax.swing.JButton getTrain() {
+        return this.trainButton;
+    }
+
+    public javax.swing.JLabel getAlert() {
+        return this.alert;
+    }
+
 
     public void startGame() {
         this.playButton.setVisible(true);

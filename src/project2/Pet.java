@@ -12,6 +12,11 @@ package project2;
 public class Pet {
     private int hunger, happy, training, level, flags;
     private String name;
+    private String alert;
+    public String getAlert()
+    {
+        return this.alert;
+    }
     Pet(String name)
     {
         this.name = name;
@@ -20,6 +25,7 @@ public class Pet {
         this.training = 0;
         this.level = 1;
         this.flags = 0;
+        this.alert = "";
     }
     Pet(String name, int hunger, int happy, int training, int level, int flags) //for getting a pet from file
     {
@@ -29,16 +35,19 @@ public class Pet {
         this.training = training;
         this.level = level;
         this.flags = flags;
+        this.alert = "";
     }
     public boolean boundsCheck()   //ensure variables are within range 0-100
     { 
         if (flags >= 5) //Pets with 5 flags run away and are no longer playable
         {
+            alert = name + " has run away.";
             System.out.println(name + " has run away.");
             return true;
         }
         if (hunger >= 100)
         {
+            alert = name + " is starving! Feed them quick!";
             System.out.println(name + " is starving! Feed them quick!");
             flags+=1;
             hunger = 100;
@@ -49,6 +58,7 @@ public class Pet {
             happy = 100;
         if (happy <= 0)
         {
+            alert = name + " is unhappy. Try playing with them to cheer them up";
             System.out.println(name + " is unhappy. Try playing with them to cheer them up");
             happy = 0;
             flags+=1;

@@ -107,6 +107,7 @@ public class AccessDB {
                         //System.out.println("id: " + allpets.getString("ID"));
                         //System.out.println("petid: " + userpets.getString("PETID"));
                         if (allpets.getString("ID").equals(userpets.getString("PETID"))) {
+                            System.out.println("pet found");
                             Pet temp = new Pet(allpets.getString("NAME"), allpets.getInt("HUNGER"), allpets.getInt("HAPPY"), allpets.getInt("TRAINING"), allpets.getInt("LEVEL"), allpets.getInt("FLAGS"));
                             pets.add(temp);
                         }
