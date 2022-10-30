@@ -88,4 +88,26 @@ public class AccessDBTest {
         boolean result = instance.getUser(name, pets);
         assertEquals(expResult, result);
     }
+    
+        @Test
+    public void testGetUserNotFound() {
+        System.out.println("getUser");
+        String name = "awdesziujokcm";
+        ArrayList<Pet> pets = new ArrayList<Pet>();
+        AccessDB instance = new AccessDB();
+        boolean expResult = false;
+        boolean result = instance.getUser(name, pets);
+        assertEquals(expResult, result);
+    }
+            @Test
+    public void testGetUserPet() {
+        System.out.println("getUser");
+        String name = "testuser";
+        ArrayList<Pet> pets = new ArrayList<Pet>();
+        AccessDB instance = new AccessDB();
+        String expResult = "testpet";
+        boolean temp = instance.getUser(name, pets);
+        String result = pets.get(0).getName();
+        assertEquals(expResult, result);
+    }
 }
