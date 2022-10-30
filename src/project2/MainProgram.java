@@ -23,7 +23,7 @@ public class MainProgram {
         String name; //current users username
         String petName;
         ArrayList<Pet> pets = new ArrayList<Pet>(); //current users pets
-        HashMap<String, Set<Integer>> userData = new HashMap(); //stores all usernames & IDs of user pets
+        //HashMap<String, Set<Integer>> userData = new HashMap(); //stores all usernames & IDs of user pets
         Scanner scan = new Scanner(System.in);
         boolean play = false;
         while (true) //main menu loop
@@ -43,7 +43,8 @@ public class MainProgram {
 
         if (play) {
             petName = "";
-            AccessFile file = new AccessFile();
+            //AccessFile file = new AccessFile();
+            AccessDB db = new AccessDB();
             boolean useSave = false;
             while (true) {
                 System.out.println("Please enter your username: ");
@@ -54,7 +55,8 @@ public class MainProgram {
                     break;
                 }
             }
-            file.getUsers(userData);    //add users data from file to userData
+            /* legacy code
+            db.getUsers(userData);    //add users data from file to userData
 
             boolean found = false;
             for (String key : userData.keySet()) {  //search user data for input username
@@ -67,9 +69,12 @@ public class MainProgram {
                     break;
                 }
             }
+            */
+            
+            boolean found = db.getUser(name, pets);
             if (found == true) {    //if user found to be existing in file
                 //search pets.txt
-                file.getPets(userData, pets, name);
+                //db.getPets(userData, pets, name);
                 if (pets.size() > 0)
                 {
                     while (true) {
@@ -155,7 +160,7 @@ public class MainProgram {
 
                 }
             } else { //new user
-                userData.put(name, new HashSet<Integer>());
+                //userData.put(name, new HashSet<Integer>());
                 while (true) {
                     System.out.println("Enter a pet name: ");
                     petName = scan.next();
@@ -171,7 +176,8 @@ public class MainProgram {
             game.action();
             System.out.println("Goodbye!");
             Pet pet = game.getPet();
-            file.save(userData, useSave, name, pet);
+            db.saveDB(found, useSave, name, pet, pets);
+            //file.save(userData, useSave, name, pet);
         }
 
     }
