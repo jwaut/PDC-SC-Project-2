@@ -15,7 +15,7 @@ import org.apache.commons.lang3.StringUtils;
  * This class prepares the game by loading save data from files and
  * instantiating the game, and also saving upon exit
  */
-public class MainProgram {
+public class CLIMainProgram {
 
     public static void main(String[] args) {
         Game game = null;

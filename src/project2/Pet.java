@@ -63,7 +63,7 @@ public class Pet {
     }
     public String toString()
     {
-        return name + ", Level " + level + "\nHunger: " + hunger + "/100\nHappiness: "+happy + "/100\nTraining: "+training + "/100";
+        return name + ", Level " + level + "<br/>Hunger: " + hunger + "/100<br/>Happiness: "+happy + "/100<br/>Training: "+training + "/100";
     }
     public int getHunger() {
         return hunger;

@@ -55,7 +55,7 @@ public class AccessDB {
         } catch (SQLException ex) {
             Logger.getLogger(AccessDB.class.getName()).log(Level.SEVERE, null, ex);
         }
-        System.out.println("DB Connected");
+        //System.out.println("DB Connected");
     }
 
     public ResultSet queryDB(String sql) {
